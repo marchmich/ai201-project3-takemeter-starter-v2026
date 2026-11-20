@@ -118,12 +118,13 @@ If you're someone who is also pivoting into AI governance, policy, safety, or an
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** Projects and questions can be confused because they both discuss an idea, and ask a question. In the case for projects, the person is asking for collaboration. 
 
 **The decision rule I used every time:**
 <!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
      if the tone is heated." -->
 
+If the post invites to collaborate, or connect then it is 'Project', even if it also contains a question.
 
 
 ---
