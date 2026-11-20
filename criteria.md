@@ -50,65 +50,53 @@ whether you hit them:
   Pick with that in mind — it is stricter than it first sounds.
 
 ---
-
 ## 1.
 
-<!-- Your criterion. It must name a number. -->
-
-
+Every label except *project* has an F1 score of at least 0.65 on a held-out test set that contains at least 30 examples of each of those labels.
 
 **Why this target:**
 
-
+At 0.65, roughly 3 in 10 predictions for a label are wrong or missed. That is the most error I can tolerate before fixing mistakes by hand takes as long as labeling from scratch. Requiring 30 test examples per label keeps one lucky or unlucky batch from swinging the score. If a label misses 0.70, I will add training examples for it and check which labels it is confused with.
 
 ---
 
 ## 2.
 
-<!-- Your criterion. -->
-
-
+The *project* label (posts asking to collaborate) must reach an F1 of at least 0.50 on the held-out set, and no more than 0.20 below the average F1 of the other three labels.
 
 **Why this target:**
 
-
+There are far fewer collaboration posts than other kinds, so this label will be harder to learn and its score will be noisy. I accept a lower floor, but not no floor: a model that never predicts *project* would defeat the purpose of having the label. If it falls below 0.50, I will collect more *project* examples before trusting the model.
 
 ---
 
 ## 3.
 
-<!-- Your criterion. -->
-
-
+Predictions with a confidence of 90% or higher must be correct at least 90% of the time, and at least 50% of all predictions must reach that confidence level. Predictions below 60% confidence are sent to a person for review.
 
 **Why this target:**
 
-
+A confidence score is only useful if it can be trusted: if "90% sure" predictions are right only 75% of the time, I can't use confidence to decide what to accept automatically. The 50% coverage requirement stops the rule from being met in a useless way (for example, if only 5% of predictions ever reach 90%). Sending low-confidence predictions to a person catches the cases the model is least sure about. If calibration fails, I will recalibrate the scores or raise the review threshold.
 
 ---
 
 ## 4.
 
-<!-- Your criterion. -->
-
-
+When a second person independently labels a random sample of 100 posts, we must agree on at least 80% of them, with a Cohen's kappa of at least 0.65.
 
 **Why this target:**
 
-
+If two people can't agree on the labels, the model has no consistent answer to learn, and no accuracy number can be trusted. With four labels, some agreement happens by luck, so kappa corrects for that. The sample must be random so it includes the harder *project* posts. If agreement falls below the target, I will rewrite the label definitions and relabel the disagreements before training. This also sets a ceiling: the model shouldn't be expected to beat human agreement.
 
 ---
 
 ## 5.
 
-<!-- Your criterion. -->
-
-
+In the training data, the most common label may be no more than 3 times as frequent as the rarest label, and every label must have at least [50] training examples.
 
 **Why this target:**
 
-
-
+When one label dominates, the model learns to favor it, and overall accuracy looks good even if the rare labels are handled poorly (a model that always guessed the most common label would still score well). The minimum count matters most for *project*, the rarest label. If the ratio goes above 3x, I will collect more examples of the rare labels or resample before training.
 ---
 
 <!-- ─────────────────────────────────────────────────────────────────────────
