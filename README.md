@@ -54,7 +54,7 @@ I have chosen the reddit community r/AIsafety. My classifier sorts posts into ca
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `Carreer Advice`
+### `Career Advice`
 
 **Definition:** This refers to any post in which users are asking for carreer guidance or advice to other users. It can also include questions about the field, or similar fields such as AI governance, evaluation, or software engineering.
 
@@ -134,10 +134,12 @@ If the post invites to collaborate, or connect then it is 'Project', even if it 
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. -->
 
-**Where the posts came from:**
+**Where the posts came from:** Reddit, r/AIsafety
 
 **How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
 Say so plainly — the disclosure is required, not penalised. -->
+
+I labeled the first half by hand, the second one with AI and corrected.
 
 **Counts per label:**
 
