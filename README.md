@@ -139,16 +139,19 @@ If the post invites to collaborate, or connect then it is 'Project', even if it 
 **How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
 Say so plainly — the disclosure is required, not penalised. -->
 
-I labeled the first half by hand, the second one with AI and corrected.
+I labeled 20 posts as cold and the rest I used AI to labelled them. I then double-checked that the labels were right and corrected the ones that were not..
+
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| discussion | 217 | 63.08% |
+| career advice | 63 | 18.31% |
+| projects | 58  | 16.86% |
+| questions | 6 |  1.74%|
+| **Total** | 344 | 100% |
+
 
 **Three hard cases**
 
@@ -157,25 +160,37 @@ I labeled the first half by hand, the second one with AI and corrected.
 
 **1.**
 > *The post:*
->
+> How Ransomware Operators Put AI Agents to Work? 
 > *Could have been:*
->
+> Discussion
 > *I chose, because:*
+> I chose Questions because the user was asking other users for clarification, but it was confusing because the user provided some ideas. 
 
 **2.**
 > *The post:*
->
+> "Running (or starting) an AI safety group at your university? Pathfinder Fellowship applications are open until November 24! The Pathfinder Fellowship supports students organizing AI safety and AI policy groups at universities anywhere in the world. Fellows get 1-on-1 mentorship from experienced organizers, funding for their group, and a community of organizers at 80+ universities. New groups launching next semester are welcome, and we support organizers at every experience level.
+
+We're also looking for mentors who have organized a university group before.
+
+The program runs from early December 2026 through the spring semester. Applications close November 24, 2026 (11:59 PM AoE).
+
+* [More info](https://pathfinder.kairos-project.org/?utm_source=reddit-aisafety&utm_medium=forum&utm_campaign=pathfinder-s27)
+* [Apply as a fellow](https://forms.kairos-project.org/pathfinder/fellow?utm_source=reddit-aisafety&utm_medium=forum&utm_campaign=pathfinder-s27)
+* [Apply as a mentor](https://forms.kairos-project.org/pathfinder/mentor?utm_source=reddit-aisafety&utm_medium=forum&utm_campaign=pathfinder-s27)
+
+Happy to answer questions in the comments!"
 > *Could have been:*
->
+> Another category, miscellany.
 > *I chose, because:*
+> I kept it under the career guidance label, because it can be related, but falls outside the description label I gave.
 
 **3.**
 > *The post:*
->
+> If AI alignment is so important, why do you need to get hired to help solve it? 
 > *Could have been:*
->
+> Discussion
 > *I chose, because:*
-
+I chose question, but could have been discussion as well. I decided that the user was mostly looking for answers, rather than introducing a new idea.
 ---
 
 ## The Training Run
@@ -183,16 +198,25 @@ I labeled the first half by hand, the second one with AI and corrected.
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
 **Base model:**
+I am using distilbert-base-uncased
 
 **Settings:** <!-- epochs, learning rate, batch size, seed -->
+seed 42, 3 epochs, lr 2e-05, batch 16
 
 **Anything I changed from the defaults, and why:**
+I did not changed anything from the defaults. I will be testing how accuracy increases in the fine-tuned scenario.
 
 **Split sizes:** <!-- train / val / test, and per-label counts in the test
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
 
-
+train 240  ·  val 52  ·  test 52
+               train  val  test
+label                          
+questions         45    9     9
+career advice      4    1     1
+projects          40    9     9
+discussions      151   33    33
 
 ---
 
@@ -207,9 +231,9 @@ of next unit's variance. -->
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* To label the reddit entries, using the following labels: question, career advice, discussions, projects label.
+- *What came back:* A list of all 344 entries labelled by my criteria.
+- *What I changed:* I changed the notes from pre-label to 'cold' in the 20 entries I had done earlier. I also changed the entries mislabeled by AI.
 
 **Moment 2**
 
