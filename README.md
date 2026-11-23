@@ -69,7 +69,7 @@ Thank you in advance to all of you that took the time to read this far
 
 ### `Discussions`
 
-**Definition:** This refers to post in which users discuss and/or debate ideas, developments, milestones, or issues. 
+**Definition:** This refers to post in which users exchange or debate ideas, developments, milestones, or issues. 
 
 **Example 1:**
 > The answer to all these cyber attacks is simple - rebuild everything from scratch
@@ -235,13 +235,7 @@ discussions      151   33    33
 - *What came back:* A list of all 344 entries labelled by my criteria.
 - *What I changed:* I changed the notes from pre-label to 'cold' in the 20 entries I had done earlier. I also changed the entries mislabeled by AI.
 
-**Moment 2**
-
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
-
-**Pre-labelling disclosure:**
+**Pre-labelling disclosure:** I used Claude for pre-labelling but I double-checked every entry and edited those that were mislabeled by AI.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
@@ -254,23 +248,33 @@ discussions      151   33    33
 
 <!-- Both models on the same posts. `python baseline.py --trained results.json`
      prints this table for you. -->
+| Measure | Baseline |
+|---|---|
+| Overall accuracy | 0.269 |
+| Macro F1 | 0.296 |
+| F1 — `career advice` | 0.000 |
+| F1 — `discussions` | 0.162 |
+| F1 — `projects` | 0.429 |
+| F1 — `questions` | 0.593 |
+
+
+**What I predicted before I looked:**
+I predict my model will have higher accuracy overall, but particularly will have higher accuracy for discussions because I have a large dataset.
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
-
-**What I predicted before I looked:**
-<!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
-     prediction made afterwards isn't one. -->
+| Overall accuracy | 0.269 | 0.635 | +0.365 |
+| Macro F1 | 0.296 | 0.194 | -0.102 |
+| F1 — `career advice` | 0.000 | 0.000 | +0.000 |
+| F1 — `discussions` | 0.162 | 0.776 | +0.614 |
+| F1 — `projects` | 0.429 | 0.000 | -0.429 |
+| F1 — `questions` | 0.593 | 0.000 | -0.593 |
 
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
 
-
+There is an increase of 0.365 in the overall accuracy, which means that the fine-tuning enhanced the system. The f1 score for projects and question dicreased which could signify that the label is confusing and maybe too similar or that the data set was too small.
 
 ---
 

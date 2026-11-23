@@ -8,3 +8,8 @@
 analysis: makes an argument backed by a specific, checkable fact
 hot_take: a confident claim with no support offered
 reaction: an immediate response to something that just happened
+
+project: a request for collaboration, or input regarding a projects the user is working on.
+question: a user request for clarification, explanation, or a different point of view. 
+career advice: 
+discussion: exchange or debate of ideas, developments, milestones, or issues
