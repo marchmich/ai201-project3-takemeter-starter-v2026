@@ -289,7 +289,7 @@ There is an increase of 0.365 in the overall accuracy, which means that the fine
 | 2.  | Every label F1 | >60% | 0.194 | 0.194 | 0.194 | MISSED |
 | 3.  | Precision on career guidance | >40% | 0.0 | 0.0 | 0.0 | MISSED |
 | 4.  | Recall on questions | >60% | 0.0 | 0.0 | 0.0 | MISSED |
-| 5.  | Beats the baseline on accuracy |  yes | yes | yes | MET |
+| 5.  | Beats the baseline on accuracy |  >0.635| tbd | tbd | tbd |
 
 | Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
 |---|---|---|---|---|
@@ -518,39 +518,48 @@ The f1 scores. However, the most obvious diagnosis is that the label definition 
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  | Overall accuracy | >60% |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1.  | Overall accuracy | >60% | 0.550 | 0.550 | 0.550 | MISSED |
+| 2.  | Every label F1 | >60% | 0.177 | 0.177 | 0.177 | MISSED |
+| 3.  | Precision on career advice | >40% | 0.0 | 0.0 | 0.0 | MISSED |
+| 4.  Recall on questions | >60% | 0.0 | 0.0 | 0.0 | MISSED
+| 5.  |  Beats the baseline on accuracy | >0.63 | 0.55 | 0.55 | 0.55 | MISSED
 
 
 | 1.  | Overall accuracy | >60% | PASSED | The accuracy was greater than 60% for all seeds. |
 | 2.  | Every label F1 | >60% | 0.194 | 0.194 | 0.194 | MISSED | The f1 scores are very low for all labels |
 | 3.  | Precision on career guidance | >40% | 0.0 | 0.0 | 0.0 | MISSED | results indicate low precision for career guidance because of the small data set. |
 | 4.  | Recall on questions | >60% | 0.0 | 0.0 | 0.0 | results indicate recall for question. |
-| 5.  | Beats the baseline on accuracy |  yes | yes | yes | MET | 
+| 5.  | Beats the baseline on accuracy | > | NO. | NO | MISSED | 
 
 **Did it help, and how do I know:**
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
 
-
+No, my solution did not help. Not only did not help but it also made my model less accurate and missed all my criteria. While I thought that diversifying the dataset would help the training of the model, it made it worse. 
 
 ---
 
 ## What's Still Broken
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
-
+The criteria is still unmet. To meet my criteria I would have to fix the labeling problem I have. I would merge discussions and questions into a single label, that way it is easier to distinct between discussion, career advice and projects.
 
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
 <!-- Two sentences. Your confusion matrix is the evidence. -->
+I meant question and discussion to be very distinct. Question posts would be user mostly asking for help/explanation, rather than discussing an idea or introducing an argument; and dicussions was meant to label posts in which users request a second opinion. My system was very confused between these two, and I also had trouble labeling them sometimes.
 
+| true \ predicted | questions | career advice | projects | discussions |
+|---|---|---|---|---|
+| **questions** | 0 | 0 | 0 | 10 |
+| **career advice** | 0 | 0 | 0 | 8 |
+| **projects** | 0 | 0 | 0 | 9 |
+| **discussions** | 0 | 0 | 0 | 33 |
 
+Biggest confusion: 10 real `questions` posts called `discussions`.
+The other direction: 0 real `discussions` posts called `questions`.
 
 <!-- ═════════════════════════════════════════════════════════════════════
 
@@ -589,3 +598,4 @@ learned:**
 ---
 
 📖 **How to run this project: [RUNNING.md](RUNNING.md)**
+To run this project, first install all the dependancies. Double check the label files and verify they are labeled correctly according to the criteria, and then run the notebook `takemeter.ipynb`
