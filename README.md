@@ -285,11 +285,11 @@ There is an increase of 0.365 in the overall accuracy, which means that the fine
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1.  | Overall accuracy | >60% | 0.635 | 0.635 | 0.635 | PASSED |
+| 2.  | Every label F1 | >60% | 0.194 | 0.194 | 0.194 | MISSED |
+| 3.  | Precision on career guidance | >40% | 0.0 | 0.0 | 0.0 | MISSED |
+| 4.  | Recall on questions | >60% | 0.0 | 0.0 | 0.0 | MISSED |
+| 5.  | Beats the baseline on accuracy |  yes | yes | yes | MET |
 
 | Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
 |---|---|---|---|---|
@@ -336,11 +336,11 @@ discussions (33 true): all 33 were labelled "discussions", so all correct
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1.  | Overall accuracy | >60% | PASSED | The accuracy was greater than 60% for all seeds. |
+| 2.  | Every label F1 | >60% | 0.194 | 0.194 | 0.194 | MISSED | The f1 scores are very low for all labels |
+| 3.  | Precision on career guidance | >40% | 0.0 | 0.0 | 0.0 | MISSED | results indicate low precision for career guidance because of the small data set. |
+| 4.  | Recall on questions | >60% | 0.0 | 0.0 | 0.0 | results indicate recall for question. |
+| 5.  | Beats the baseline on accuracy |  yes | yes | yes | MET | 
 
 **Diagnoses**
 
@@ -352,6 +352,18 @@ discussions (33 true): all 33 were labelled "discussions", so all correct
      ⚠️ Use your agreement report as evidence. It is the only instrument you
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
+
+Criterion 2: — Every label F1 >60%: MISSED
+
+This is mainly a data imbalance problem. The training set contains only 6 career-advice examples, while discussions has 217. 
+
+Criterion 3: Career-advice precision >40%: MISSED
+
+This is also because of the same too-few-examples problem. I do not consider this to be a labeling problem. Career advice appears only 6 times in 344 rows, and none of the held-out career-advice examples received a career-advice prediction. The agreement report does not contain career-advice examples, so it provides no direct evidence of a career-advice boundary inconsistency.
+
+Criterion 4 — Questions recall >60%: MISSED
+
+All 9 held-out questions were predicted as discussions, so the model learned discussions more strongly than the questions/discussions boundary. The agreement report’s 70% agreement and some repeated reaction/analysis and hot-take/analysis disagreements show that one of the project taxonomies has inconsistent boundaries, but it does not directly measure the questions/discussions boundary. The confusion matrix is therefore stronger evidence that this miss comes from model and data limitations rather than an established labeling error.
 
 
 
