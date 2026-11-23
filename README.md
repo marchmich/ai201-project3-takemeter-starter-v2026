@@ -291,24 +291,42 @@ There is an increase of 0.365 in the overall accuracy, which means that the fine
 | 4.  |  |  |  |  |  |
 | 5.  |  |  |  |  |  |
 
+| Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
+|---|---|---|---|---|
+| Overall accuracy | 0.635 | 0.635 | 0.635 | 0.000 |
+| Macro F1 | 0.194 | 0.194 | 0.194 | 0.000 |
+| F1 — `questions` | 0.000 | 0.000 | 0.000 | 0.000 |
+| F1 — `career advice` | 0.000 | 0.000 | 0.000 | 0.000 |
+| F1 — `projects` | 0.000 | 0.000 | 0.000 | 0.000 |
+| F1 — `discussions` | 0.776 | 0.776 | 0.776 | 0.000 |
+
+Accuracy moved 0.000 across seeds. Stable enough to trust.
+
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| true \ predicted | questions | career advice | projects | discussions |
+|---|---|---|---|---|
+| **questions** | 0 | 0 | 0 | 9 |
+| **career advice** | 0 | 0 | 0 | 1 |
+| **projects** | 0 | 0 | 0 | 9 |
+| **discussions** | 0 | 0 | 0 | 33 |
+
+
 
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
 
+The biggest off-diagonal number is 9 and appears twice. That is because all 9 "project" were labelled "discussions", so 0 correct, and because all 9 "questions", were labelled "discussions", so 0 correct.
 
+This means that the model is leaning towards 'discussions' and it is lopsided. As I noted before, the labels discussions and questions tend to overlap, so it might be a good idea to merge them.
 
+career advice (1 true): the 1 example was labelled "discussions", so 0 correct
+discussions (33 true): all 33 were labelled "discussions", so all correct
 ---
 
 ## Verdicts and Diagnoses
