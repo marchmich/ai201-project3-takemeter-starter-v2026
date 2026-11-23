@@ -121,7 +121,7 @@ If you're someone who is also pivoting into AI governance, policy, safety, or an
 **Which two labels:** Projects and questions can be confused because they both discuss an idea, and ask a question. In the case for projects, the person is asking for collaboration. 
 
 **The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
+<!-- e.g. "If the post names a specific checkable fact, it's analysis, even
      if the tone is heated." -->
 
 If the post invites to collaborate, or connect then it is 'Project', even if it also contains a question.
@@ -365,7 +365,7 @@ discussions (33 true): all 33 were labelled "discussions", so all correct
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** 21 / 30 = 70%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -387,27 +387,109 @@ discussions (33 true): all 33 were labelled "discussions", so all correct
      written rule two different ways on 30 posts, that is direct evidence about
      what you did across your own 200. -->
 
+| Post | Staff said | I said | My call, and why |
+|---|---|---|---|
+| The club championship scoring changed in 2019 from top-6 to top-10. S… | analysis | reaction |  |
+| Carbon plates aren't the whole story. My times dropped 2% in the shoe… | analysis | reaction |  |
+| Three of us ran the same session on the same day, different shoes, wi… | analysis | reaction |  |
+| Heart rate zones are astrology for runners. | hot_take | analysis |  |
+| Track sessions are wasted on anyone running slower than 8 minute mile… | hot_take | analysis |  |
+| First run back after eight weeks out. Two miles, slower than my warm-… | reaction | hot_take |  |
+| Blew up at 20 with the pace band still in my hand like it was going t… | reaction | analysis |  |
+| Someone handed my kid an orange slice at mile 22 and I have been cryi… | reaction | analysis |  |
+| Just realised the shoes I set every PB in this year are the ones I bo… | reaction | analysis |  |
+
 **1.**
 > *The post:*
->
+> The club championship scoring changed in 2019 from top-6 to top-10. Since then our B team has finished above the A team twice. That's not depth improving, it's the scoring rewarding turnout.
 > *Staff said / I said:*
->
+> analysis | reaction
 > *My call, and why:*
->
-> *Which pile:*
+> I said reaction because the post responds to a concrete rule change and supports its reaction with data. I would change it to analysis because the post uses that evidence to explain a broader interpretation: the scoring system, not athlete depth, is what changed the outcome.
+> *Which pile:* a
 
 **2.**
 > *The post:*
->
+> Carbon plates aren't the whole story. My times dropped 2% in the shoes and another 2% the following year in the same pair, when the only thing that changed was going from 35 to 50 miles a week.
 > *Staff said / I said:*
->
+> analysis | reaction
 > *My call, and why:*
->
-> *Which pile:*
+> I said reaction because it its mostly talking from personal experience, it reports what just happened to the writer and how it felt. But since he is introducing the data, and most likely willing to discuss it, it can be analysis
+> *Which pile:* b
+
+**3.**
+> *The post:*
+> Three of us ran the same session on the same day, different shoes, within 10 seconds of each other over 5 miles. I'm not saying shoes do nothing, but whatever they do was smaller than the noise between three people.
+> *Staff said / I said:*
+> analysis | reaction
+> *My call, and why:*
+>  I said reaction because reports what just happened to the writer and how it felt.
+> *Which pile:* c
+
+**4.**
+> *The post:*
+> Heart rate zones are astrology for runners.
+> *Staff said / I said:*
+> hot_take | analysis
+> *My call, and why:*
+> I  labelled it as analysis because makes the post is trying to make an argument backed by a specific, named comparisonm as described in the taxonomy.
+> *Which pile:* c
+
+**5.**
+> *The post:*
+> Track sessions are wasted on anyone running slower than 8 minute miles. You'd get more out of just running more.
+> *Staff said / I said:*
+> hot_take | analysis
+> *My call, and why:*
+> I labelled it as analysis, thinking the idea could be expanded, but it is not. Therefore, it is a hot take.
+> *Which pile:* a
+
+**6.**
+> *The post:*
+> First run back after eight weeks out. Two miles, slower than my warm-up used to be, and I don't care even slightly.
+> *Staff said / I said:*
+> reaction | hot_take
+> *My call, and why:*
+> I called it as a hot take, but it is definetely a reaction because it reports what just happened to the writer and
+how it felt.
+> *Which pile:* a
+
+**7.**
+> *The post:*
+> Blew up at 20 with the pace band still in my hand like it was going to help. Rough one.
+> *Staff said / I said:*
+> reaction | analysis
+> *My call, and why:*
+> I called it as a analysis, but it is definetely a reaction because it reports what just happened to the writer and
+how it felt. It is a bit amiguous because it is hard to understand what the writer is trying to convey.
+> *Which pile:* b
+
+**8.**
+> *The post:*
+> Someone handed my kid an orange slice at mile 22 and I have been crying on and off since.
+> *Staff said / I said:*
+> reaction | analysis
+> *My call, and why:*
+> I made a mistake in this label, this should have definitely been labeled as a reaction.
+> *Which pile:* a
+
+**9.**
+> *The post:*
+> Just realised the shoes I set every PB in this year are the ones I bought by accident in the wrong size.
+> *Staff said / I said:*
+> reaction | analysis
+> *My call, and why:*
+> I thought that if expanded, the argument could be that the wrong size shoes were helping him set PB more frequently. However, the idea is not further expanded, therefore is not substatial enough to be an analysis. Therefore, I do agree that reaction is a much better fit.
+> *Which pile:* a
+
+
+
+
+
 
 **What the pattern in my disagreements tells me:**
 
-
+That for some, I did have a consistency problem applying the rules to loosely. However, some of the posts were just ambiguous, therefore hard to label them consistenly.
 
 ---
 
