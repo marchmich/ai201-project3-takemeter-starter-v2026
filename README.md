@@ -401,15 +401,18 @@ All 9 held-out questions were predicted as discussions, so the model learned dis
 
 | Post | Staff said | I said | My call, and why |
 |---|---|---|---|
-| The club championship scoring changed in 2019 from top-6 to top-10. S… | analysis | reaction |  |
-| Carbon plates aren't the whole story. My times dropped 2% in the shoe… | analysis | reaction |  |
-| Three of us ran the same session on the same day, different shoes, wi… | analysis | reaction |  |
-| Heart rate zones are astrology for runners. | hot_take | analysis |  |
-| Track sessions are wasted on anyone running slower than 8 minute mile… | hot_take | analysis |  |
-| First run back after eight weeks out. Two miles, slower than my warm-… | reaction | hot_take |  |
-| Blew up at 20 with the pace band still in my hand like it was going t… | reaction | analysis |  |
-| Someone handed my kid an orange slice at mile 22 and I have been cryi… | reaction | analysis |  |
-| Just realised the shoes I set every PB in this year are the ones I bo… | reaction | analysis |  |
+| The club championship scoring changed in 2019 from top-6 to top-10. S… | analysis | reaction | I said reaction because the post responds to a concrete rule change and supports its reaction with data. I would change it to analysis because the post uses that evidence to explain a broader interpretation: the scoring system, not athlete depth, is what changed the outcome. |
+| Carbon plates aren't the whole story. My times dropped 2% in the shoe… | analysis | reaction | I said reaction because it its mostly talking from personal experience, it reports what just happened to the writer and how it felt. But since he is introducing the data, and most likely willing to discuss it, it can be analysis
+ |
+| Three of us ran the same session on the same day, different shoes, wi… | analysis | reaction |  I said reaction because reports what just happened to the writer and how it felt. |
+| Heart rate zones are astrology for runners. | hot_take | analysis | I  labelled it as analysis because makes the post is trying to make an argument backed by a specific, named comparisonm as described in the taxonomy. |
+| Track sessions are wasted on anyone running slower than 8 minute mile… | hot_take | analysis | I labelled it as analysis, thinking the idea could be expanded, but it is not. Therefore, it is a hot take. |
+| First run back after eight weeks out. Two miles, slower than my warm-… | reaction | hot_take | I called it as a hot take, but it is definetely a reaction because it reports what just happened to the writer and
+how it felt. |
+| Blew up at 20 with the pace band still in my hand like it was going t… | reaction | analysis | I called it as a analysis, but it is definetely a reaction because it reports what just happened to the writer and
+how it felt. It is a bit amiguous because it is hard to understand what the writer is trying to convey. |
+| Someone handed my kid an orange slice at mile 22 and I have been cryi… | reaction | analysis | I made a mistake in this label, this should have definitely been labeled as a reaction. |
+| Just realised the shoes I set every PB in this year are the ones I bo… | reaction | analysis |  I thought that if expanded, the argument could be that the wrong size shoes were helping him set PB more frequently. However, the idea is not further expanded, therefore is not substatial enough to be an analysis. Therefore, I do agree that reaction is a much better fit. |
 
 **1.**
 > *The post:*
@@ -496,9 +499,6 @@ how it felt. It is a bit amiguous because it is hard to understand what the writ
 
 
 
-
-
-
 **What the pattern in my disagreements tells me:**
 
 That for some, I did have a consistency problem applying the rules to loosely. However, some of the posts were just ambiguous, therefore hard to label them consistenly.
@@ -507,19 +507,29 @@ That for some, I did have a consistency problem applying the rules to loosely. H
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:** I first increased the epochs and the batches thinking this would increase the f1 scores for the labels but there was little to no change. Therefore I decided to increase the dataset instead. I added more entries for career advice.
+
 
 **Which diagnosis pointed at it:**
+
+The f1 scores. However, the most obvious diagnosis is that the label definition for analysis and question is too similar. I do not have a dataset wide enough to provide more clear examples of each for training, so I thought to merge them, but to keep the testing consistent across units I will be keeping them for now.
 
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
+| 1.  | Overall accuracy | >60% |  |  |  |
 | 2.  |  |  |  |  |  |
 | 3.  |  |  |  |  |  |
 | 4.  |  |  |  |  |  |
 | 5.  |  |  |  |  |  |
+
+
+| 1.  | Overall accuracy | >60% | PASSED | The accuracy was greater than 60% for all seeds. |
+| 2.  | Every label F1 | >60% | 0.194 | 0.194 | 0.194 | MISSED | The f1 scores are very low for all labels |
+| 3.  | Precision on career guidance | >40% | 0.0 | 0.0 | 0.0 | MISSED | results indicate low precision for career guidance because of the small data set. |
+| 4.  | Recall on questions | >60% | 0.0 | 0.0 | 0.0 | results indicate recall for question. |
+| 5.  | Beats the baseline on accuracy |  yes | yes | yes | MET | 
 
 **Did it help, and how do I know:**
 
